@@ -1,0 +1,140 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -336,
+        -160
+      ],
+      "id": "0615094d-da6e-4b90-ac22-2549de5e44a2",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "hViz8oFFv0RTwAgU",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "https://docs.google.com/document/d/1zaCzOf9-sZBit-J8NAu1b4Q8eZ0hGe6Yb2O5ulKb8f8/edit?tab=t.0",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $json.text }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        -112,
+        -160
+      ],
+      "id": "3b2f6246-64e8-4bbb-bbb1-f7b3a0fa7e4d",
+      "name": "Update a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "4JHC5L3aYq44h8J6",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentURL": "https://docs.google.com/document/d/1zaCzOf9-sZBit-J8NAu1b4Q8eZ0hGe6Yb2O5ulKb8f8/edit?tab=t.0"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        112,
+        -160
+      ],
+      "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "name": "Get Document Content",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "4JHC5L3aYq44h8J6",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        336,
+        -160
+      ],
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "Preview Output"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Update a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a document": {
+      "main": [
+        [
+          {
+            "node": "Get Document Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Document Content": {
+      "main": [
+        [
+          {
+            "node": "Preview Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "534571de-2b79-43aa-bd69-87dea874f9f9",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5f4112c2bff4df46ef7bd0f28a179f6fe007f065d0c8a835b22b48a2bffd7863"
+  },
+  "id": "O72izz2f3RroNEf6",
+  "tags": []
+}
