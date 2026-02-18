@@ -2,7 +2,7 @@
 
 | Necesidad | Ubicación |
 | :--- | :--- |
-| Ver definición completa del workflow | [`gmail-docs-auth/workflow-gmail-docs.auth.json`](../../gmail-docs/gmail-gdocs.json) |
+| Ver definición completa del workflow | [`gmail-docs/gmail-docs.json`](../gmail-gdocs/gmail-gdocs.json) |
 | Configurar credenciales Gmail | [Credenciales](#credenciales) |
 | Configurar credenciales Google Docs | [Credenciales](#credenciales) |
 | Depurar inserción vacía en el Doc | [Resolución de Errores](#resolución-de-errores) |
