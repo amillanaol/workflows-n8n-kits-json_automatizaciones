@@ -25,10 +25,10 @@ El trigger hace polling cada minuto. Al detectar un correo, extrae `$json.text` 
 
 ## Credenciales
 
-| Credencial | Tipo n8n | ID | Nombre configurado |
-| :--- | :--- | :--- | :--- |
-| Gmail OAuth2 | `gmailOAuth2` | `hViz8oFFv0RTwAgU` | `Gmail account` |
-| Google Docs OAuth2 | `googleDocsOAuth2Api` | `4JHC5L3aYq44h8J6` | `Google Docs account` |
+| Credencial | Tipo n8n  | Nombre configurado |
+| :--- | :--- | :---  |
+| Gmail OAuth2 | `gmailOAuth2` |  `Gmail account` |
+| Google Docs OAuth2 | `googleDocsOAuth2Api` | `Google Docs account` |
 
 Ambas credenciales deben configurarse en **Settings > Credentials** de la instancia n8n antes de importar el workflow.
 
