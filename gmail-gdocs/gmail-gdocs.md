@@ -60,8 +60,8 @@ Ambas credenciales deben configurarse en **Settings > Credentials** de la instan
 | Síntoma | Causa Raíz | Solución Técnica |
 | :--- | :--- | :--- |
 | El Doc recibe texto vacío | `$json.text` no existe en el output del trigger | Verificar campos disponibles en el panel de ejecución; usar `$json.snippet` o `$json.body.html` según el trigger |
-| Error de autenticación Gmail | Credencial `hViz8oFFv0RTwAgU` expirada o inválida | Reconectar OAuth2 en **Settings > Credentials > Gmail account** |
-| Error de autenticación Google Docs | Credencial `4JHC5L3aYq44h8J6` sin permisos de escritura | Verificar scope OAuth2: requiere `https://www.googleapis.com/auth/documents` |
+| Error de autenticación Gmail | Credencial `hash` expirada o inválida | Reconectar OAuth2 en **Settings > Credentials > Gmail account** |
+| Error de autenticación Google Docs | Credencial `hash` sin permisos de escritura | Verificar scope OAuth2: requiere `https://www.googleapis.com/auth/documents` |
 | El workflow no se ejecuta | `active: false` en la definición | Activar mediante toggle en la UI o cambiar `active` a `true` antes de importar |
 | Inserción duplicada en el Doc | Polling detecta el mismo email múltiples veces | Agregar filtro por `$json.id` con un nodo `If` antes de `Update a document` |
 
